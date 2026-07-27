@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soken — Pure Wellness. Modern Nutrition.</title>
+<meta name="description" content="Soken functional gummies and effervescent tablets — eye, respiratory, liver, sleep, skin and gut wellness. Formulated on evidence, made under WHO-GMP.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
+</head>
+<body data-page="home">
+
+<!-- ===== HEADER ===== -->
+<header class="hdr" id="hdr">
+  <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="hdr-links">
+    <li><a href="index.html" class="on">Home</a></li>
+    <li class="dd">
+      <a href="shop.html">Shop <span class="crt">▾</span></a>
+      <div class="dd-panel">
+        <a href="shop.html"><span class="t">All Products</span><span class="s">The complete collection</span></a>
+        <a href="shop.html?cat=gummies"><span class="t">Gummies</span><span class="s">Eye · Lung · Liver · Sleep</span></a>
+        <a href="shop.html?cat=effervescent"><span class="t">Effervescent Tablets</span><span class="s">NAC · Glutathione · Biotin · Gut Health</span></a>
+      </div>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="science.html">Science</a></li>
+    <li><a href="quality.html">Quality</a></li>
+    <li><a href="partners.html">Partners</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="index.html" class="hdr-logo" aria-label="Soken — home">
+    <img src="assets/logo.png" alt="Soken" width="99" height="28">
+  </a>
+  <div class="hdr-actions">
+    <a href="shop.html" class="hide-m">Search</a>
+    <a href="#" class="hide-m" onclick="event.preventDefault();toast('Accounts coming soon')">Account</a>
+    <button class="bag-btn" onclick="openDrawer()">Bag <span class="bag-n">0</span></button>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop All</a>
+  <a href="shop.html?cat=gummies">Gummies</a>
+  <a href="shop.html?cat=effervescent">Effervescent</a>
+  <a href="about.html">About</a>
+  <a href="science.html">Science</a>
+  <a href="quality.html">Quality</a>
+  <a href="partners.html">Partners</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Your Bag</a>
+  <span class="ey">By Tattvam Lifesciences</span>
+</nav>
+
+<main>
+
+<!-- ===== HERO (full width: content left · product slider right) ===== -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="rv">
+      <div class="hero-kicker"><span class="k-line"></span><span class="ey">By Tattvam Lifesciences</span></div>
+      <h1>Modern Nutrition.<br><em>Rooted in Nature.</em><br>Refined by Science.</h1>
+      <p class="hero-sub">Soken makes preventive wellness something people keep doing. Formulations built on published evidence, delivered in formats worth reaching for every day.</p>
+      <div class="hero-btns">
+        <a class="btn btn-ink" href="shop.html">Shop the Collection <span class="ar">→</span></a>
+        <a class="btn btn-ol" href="shop.html?cat=gummies">Explore Gummies</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hs-ring" aria-hidden="true"></div>
+    <div class="hs-round">
+      <div class="hslide on">
+        <img src="assets/img/products/eye-gummies.svg" alt="Eye Gummies">
+      </div>
+      <div class="hslide">
+        <img src="assets/img/products/nac-600.svg" alt="NAC 600 mg Effervescent" loading="lazy">
+      </div>
+      <div class="hslide">
+        <img src="assets/img/products/sleep-gummies.svg" alt="Sleep Gummies" loading="lazy">
+      </div>
+    </div>
+    <button class="hs-ar prev" onclick="heroGo(hsI-1)" aria-label="Previous slide">←</button>
+    <button class="hs-ar next" onclick="heroGo(hsI+1)" aria-label="Next slide">→</button>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<section class="trust">
+  <div class="ct">
+    <div class="trust-in">
+      <div class="trust-i"><i>✦</i> FSSAI Compliant</div>
+      <div class="trust-i"><i>✦</i> ISO Certified Quality Systems</div>
+      <div class="trust-i"><i>✦</i> Clinically Studied Actives</div>
+      <div class="trust-i"><i>✦</i> Batch Traceability</div>
+      <div class="trust-i"><i>✦</i> Export-Ready Documentation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AT A GLANCE (counts + product quick nav) ===== -->
+<section class="glance">
+  <div class="ct">
+    <div class="gl-prods rv">
+      <a href="#p-eye-gummies"><span class="ic"><img src="assets/img/icons/eye.svg" alt="" width="26" height="26"></span><span class="tx">Eye Gummies</span></a>
+      <a href="#p-respiratory-gummies"><span class="ic"><img src="assets/img/icons/lungs.svg" alt="" width="26" height="26"></span><span class="tx">Lung Health</span></a>
+      <a href="#p-liver-gummies"><span class="ic"><img src="assets/img/icons/liver.svg" alt="" width="26" height="26"></span><span class="tx">Liver Health</span></a>
+      <a href="#p-sleep-gummies"><span class="ic"><img src="assets/img/icons/sleep.svg" alt="" width="26" height="26"></span><span class="tx">Sleep</span></a>
+      <a href="#p-nac-600"><span class="ic"><img src="assets/img/icons/nac.svg" alt="" width="26" height="26"></span><span class="tx">NAC 600</span></a>
+      <a href="#p-gluta-vitc"><span class="ic"><img src="assets/img/icons/glow.svg" alt="" width="26" height="26"></span><span class="tx">Glutathione</span></a>
+      <a href="#p-biotin-antiox"><span class="ic"><img src="assets/img/icons/biotin.svg" alt="" width="26" height="26"></span><span class="tx">Biotin</span></a>
+      <a href="#p-gut-health"><span class="ic"><img src="assets/img/icons/gut.svg" alt="" width="26" height="26"></span><span class="tx">Gut Health</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY SOKEN / STORY ===== -->
+<section class="ritual" id="ritual">
+  <div class="ct">
+    <div class="rit-grid">
+      <div class="rit-media rv">
+        <div class="big">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1100&auto=format&fit=crop" alt="Morning wellness ritual" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/soken-ritual/1100/1250'">
+        </div>
+        <div class="rit-badge">
+          <div class="n">92%</div>
+          <div class="l">of customers stay consistent past 60 days</div>
+        </div>
+      </div>
+      <div class="rit-tx rv" data-d="2">
+        <span class="ey">Why Soken</span>
+        <h2>Wellness designed for the way we <em>live today.</em></h2>
+        <p>Most supplements fail on one of two counts: they work but nobody keeps taking them, or they are pleasant but under-dosed. We built Soken to close that gap.</p>
+        <div class="rit-steps">
+          <div class="rit-step">
+            <div class="rs-n">01</div>
+            <div class="rs-t"><h4>Formulated on published evidence</h4><p>Actives are chosen for mechanism, safety data and bioavailable form — then dosed at the levels used in the studies we cite, not at levels that merely justify a label claim.</p></div>
+          </div>
+          <div class="rit-step">
+            <div class="rs-n">02</div>
+            <div class="rs-t"><h4>Formats built for adherence</h4><p>A supplement only works if it is taken. Pectin gummies and fast-dissolving effervescents turn a daily dose into something people look forward to rather than remember to do.</p></div>
+          </div>
+          <div class="rit-step">
+            <div class="rs-n">03</div>
+            <div class="rs-t"><h4>Manufacturing discipline</h4><p>Produced to WHO-GMP guidelines with raw-material qualification, in-process controls and finished-product analysis on every batch, with complete forward and backward traceability.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COUNTS ===== -->
+<section class="counts">
+  <div class="ct">
+    <div class="gl-stats rv">
+      <div class="gl-s"><div class="n">8</div><div class="l">Formulations in market</div></div>
+      <div class="gl-div" aria-hidden="true"></div>
+      <div class="gl-s"><div class="n">2</div><div class="l">Delivery formats</div></div>
+      <div class="gl-div" aria-hidden="true"></div>
+      <div class="gl-s"><div class="n">7</div><div class="l">Wellness categories</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE DIVIDER ===== -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-t">Formulated on Evidence</span><span class="mq-t fill">·</span>
+    <span class="mq-t">Made Delicious</span><span class="mq-t fill">·</span>
+    <span class="mq-t fill">Taken Daily</span><span class="mq-t">·</span>
+    <span class="mq-t">Formulated on Evidence</span><span class="mq-t fill">·</span>
+    <span class="mq-t">Made Delicious</span><span class="mq-t fill">·</span>
+    <span class="mq-t fill">Taken Daily</span><span class="mq-t">·</span>
+  </div>
+</div>
+
+<!-- ===== BESTSELLERS (all products, alternating) ===== -->
+<section class="sec sec-tint" id="best">
+  <div class="ct">
+    <div class="sec-hd rv">
+      <div>
+        <span class="ey">The Collection</span>
+        <h2>Our <em>products.</em></h2>
+      </div>
+    </div>
+    <div class="bl-list" id="best-list"></div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY ===== -->
+<section class="values">
+  <div class="orb v-o1"></div>
+  <div class="orb v-o2"></div>
+  <div class="ct">
+    <span class="ey lt rv" style="text-align:center">Our Philosophy</span>
+    <h2 class="rv" data-d="1" style="margin-top:16px">Health is built through <em>consistency,</em><br>not complexity.</h2>
+    <p class="lead rv" data-d="2">Wellness products should fit around a life, not ask one to be rearranged. Make the daily dose genuinely pleasant and adherence stops being a problem to solve.</p>
+    <div class="btn-row rv" data-d="3"><a class="btn btn-ghost" href="about.html">Discover Our Story <span class="ar">→</span></a></div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS CAROUSEL ===== -->
+<section class="tsl">
+  <div class="ct">
+    <div class="sec-hd rv">
+      <div>
+        <span class="ey">Kind Words</span>
+        <h2>Loved by <em>daily ritualists.</em></h2>
+      </div>
+      <div class="tsl-arrows">
+        <button class="tsl-ar" onclick="tstGo(tstI-1)" aria-label="Previous review">←</button>
+        <button class="tsl-ar" onclick="tstGo(tstI+1)" aria-label="Next review">→</button>
+      </div>
+    </div>
+    <div class="tsl-vp rv" data-d="2">
+      <div class="tsl-track" id="tsl-track">
+        <article class="tsl-slide">
+          <div class="tsl-card">
+            <div class="tsl-top"><span class="tsl-mark">"</span><span class="tsl-chip">Sleep Gummies</span></div>
+            <p class="tsl-q">The sleep gummies are the first thing that's worked without leaving me groggy. It genuinely feels like a treat before bed, not a chore.</p>
+            <div class="tsl-who">
+              <div><div class="tsl-name">Ananya M</div><div class="tsl-city">Bengaluru</div></div>
+              <span class="tsl-verified"><i>✦</i> Verified buyer</span>
+            </div>
+          </div>
+        </article>
+        <article class="tsl-slide">
+          <div class="tsl-card">
+            <div class="tsl-top"><span class="tsl-mark">"</span><span class="tsl-chip">Glutathione + Vitamin C</span></div>
+            <p class="tsl-q">Glutathione fizz every evening for three months — my skin has never looked this even. The packaging alone feels like a luxury brand.</p>
+            <div class="tsl-who">
+              <div><div class="tsl-name">Riya K</div><div class="tsl-city">Mumbai</div></div>
+              <span class="tsl-verified"><i>✦</i> Verified buyer</span>
+            </div>
+          </div>
+        </article>
+        <article class="tsl-slide">
+          <div class="tsl-card">
+            <div class="tsl-top"><span class="tsl-mark">"</span><span class="tsl-chip">NAC 600 mg</span></div>
+            <p class="tsl-q">I recommend the NAC effervescent to my patients who struggle with capsules. Clinical dose, clean excipients, and they actually finish the pack.</p>
+            <div class="tsl-who">
+              <div><div class="tsl-name">Dr Nikhil S</div><div class="tsl-city">Pune</div></div>
+              <span class="tsl-verified"><i>✦</i> Verified buyer</span>
+            </div>
+          </div>
+        </article>
+        <article class="tsl-slide">
+          <div class="tsl-card">
+            <div class="tsl-top"><span class="tsl-mark">"</span><span class="tsl-chip">Gut Health</span></div>
+            <p class="tsl-q">Two weeks of the gut health fizz and the post-lunch bloat is gone. Green apple flavour, zero sugar — it has replaced my evening soda entirely.</p>
+            <div class="tsl-who">
+              <div><div class="tsl-name">Karan T</div><div class="tsl-city">Delhi</div></div>
+              <span class="tsl-verified"><i>✦</i> Verified buyer</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tsl-dots"></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="ctab">
+  <div class="ct">
+    <div class="ctab-card rv">
+      <div class="orb v-o1"></div>
+      <div class="orb v-o2"></div>
+      <span class="ey lt">Let's Connect</span>
+      <h2>Let's build the future of <em>wellness together.</em></h2>
+      <p>Whether you are sourcing a private-label range, developing a bespoke formulation, or simply exploring the category — start a conversation.</p>
+      <div class="btn-row">
+        <a class="btn btn-lt" href="contact.html">Start a Conversation <span class="ar">→</span></a>
+        <a class="btn btn-ghost" href="partners.html">Partnership Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="news">
+  <div class="ct">
+    <div class="news-in rv">
+      <span class="ey" style="margin-bottom:16px">The Soken Circle</span>
+      <h2>10% off your <em>first ritual.</em></h2>
+      <p>Wellness notes, early access and members-only offers. No noise, ever.</p>
+      <form class="news-form" id="news-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <button class="btn btn-ink" type="submit">Subscribe</button>
+      </form>
+      <div class="news-note">By subscribing you agree to our privacy policy.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="ftr">
+  <div class="ct">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <img src="assets/logo.png" alt="Soken">
+        <div class="ftr-tag">Pure Wellness · Modern Nutrition</div>
+        <p>A wellness brand by Tattvam Lifesciences. Evidence-led nutraceutical formulations in gummy and effervescent formats, made in Ahmedabad, India.</p>
+        <div class="ftr-soc">
+          <a href="#" onclick="event.preventDefault();toast('Instagram coming soon')">Instagram</a>
+          <a href="#" onclick="event.preventDefault();toast('Facebook coming soon')">Facebook</a>
+          <a href="#" onclick="event.preventDefault();toast('YouTube coming soon')">YouTube</a>
+        </div>
+      </div>
+      <div class="ftr-col">
+        <h5>Shop</h5>
+        <a href="shop.html">All Products</a>
+        <a href="shop.html?cat=gummies">Gummies</a>
+        <a href="shop.html?cat=effervescent">Effervescent Tablets</a>
+        <a href="cart.html">Your Bag</a>
+      </div>
+      <div class="ftr-col">
+        <h5>Company</h5>
+        <a href="about.html">About Soken</a>
+        <a href="science.html">Our Science</a>
+        <a href="quality.html">Quality</a>
+        <a href="partners.html">Partnerships</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="ftr-col">
+        <h5>Contact</h5>
+        <a href="tel:+919838497384">+91 98384 97384</a>
+        <address class="ftr-addr">197, Tattvam Lifesciences, Tulsi Estate, Changodar, Ahmedabad, Gujarat 382213</address>
+        <a href="https://tattvamlife.com" rel="noopener">tattvamlife.com</a>
+      </div>
+    </div>
+    <div class="ftr-legal">
+      <p>Soken products are food supplements. They are not for medicinal use and are not intended to diagnose, treat, cure or prevent any disease. They are not a substitute for a varied, balanced diet and a healthy lifestyle. Consult a qualified healthcare professional before use if you are pregnant, nursing, taking medication or managing a medical condition. Centevita® is a registered trademark of its respective owner.</p>
+    </div>
+    <div class="ftr-bot">
+      <p>© 2026 Soken · Tattvam Lifesciences. All rights reserved.</p>
+      <div class="ftr-bl">
+        <a href="#" onclick="event.preventDefault();toast('Coming soon')">Privacy</a>
+        <a href="#" onclick="event.preventDefault();toast('Coming soon')">Terms</a>
+        <span class="ftr-pay">UPI · Visa · Mastercard · COD</span>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-word" aria-hidden="true">SOKEN</div>
+</footer>
+
+<script src="assets/js/store.js?v=2"></script>
+</body>
+</html>

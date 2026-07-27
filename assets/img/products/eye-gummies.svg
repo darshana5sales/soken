@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="80%">
+      <stop offset="0%" stop-color="#FEFCFA"/><stop offset="100%" stop-color="#F6E3D2"/>
+    </radialGradient>
+    <linearGradient id="jar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".6"/><stop offset=".2" stop-color="#FFFFFF"/>
+      <stop offset=".6" stop-color="#F7F0E8"/><stop offset="1" stop-color="#E9DFD2"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EBAB72"/><stop offset="1" stop-color="#D68B4C"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="30"/></filter>
+    <g id="bear">
+      <circle cx="10" cy="7" r="7"/><circle cx="34" cy="7" r="7"/><circle cx="22" cy="15" r="14"/>
+      <rect x="5" y="23" width="34" height="30" rx="13"/><circle cx="3" cy="32" r="6"/><circle cx="41" cy="32" r="6"/>
+      <circle cx="13" cy="53" r="6"/><circle cx="31" cy="53" r="6"/>
+    </g>
+    <path id="spark" d="M0 -13 L3.2 -3.2 L13 0 L3.2 3.2 L0 13 L-3.2 3.2 L-13 0 L-3.2 -3.2 Z"/>
+    <style>
+      .fl{animation:fl 5.5s ease-in-out infinite}
+      .fl2{animation:fl 7s ease-in-out infinite reverse}
+      @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+      .tw{animation:tw 3.2s ease-in-out infinite}
+      .tw2{animation:tw 4.1s ease-in-out infinite 1.2s}
+      @keyframes tw{0%,100%{opacity:.2}50%{opacity:.95}}
+    </style>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="450" cy="500" r="340" fill="#E8A46A" opacity=".22" filter="url(#glow)"/>
+  <use href="#spark" x="0" y="0" transform="translate(180,300)" fill="#C9A96E" class="tw"/>
+  <use href="#spark" transform="translate(722,368) scale(.7)" fill="#D68B4C" class="tw2"/>
+  <use href="#spark" transform="translate(660,220) scale(.55)" fill="#C9A96E" class="tw"/>
+  <use href="#spark" transform="translate(232,700) scale(.6)" fill="#D68B4C" class="tw2"/>
+  <g class="fl"><use href="#bear" transform="translate(150,470) rotate(-16) scale(1.5)" fill="#E8894E"/></g>
+  <g class="fl2"><use href="#bear" transform="translate(680,540) rotate(14) scale(1.3)" fill="#D4808A"/></g>
+  <g class="fl2"><use href="#bear" transform="translate(206,830) rotate(10)" fill="#C9A96E"/></g>
+  <ellipse cx="450" cy="938" rx="245" ry="32" fill="#1C1916" opacity=".14" filter="url(#soft)"/>
+  <rect x="318" y="352" width="264" height="112" rx="30" fill="url(#cap)"/>
+  <rect x="342" y="374" width="216" height="9" rx="4.5" fill="#FFFFFF" opacity=".4"/>
+  <rect x="280" y="440" width="340" height="472" rx="70" fill="url(#jar)" stroke="#DCD1C2" stroke-width="2.5"/>
+  <rect x="306" y="492" width="24" height="372" rx="12" fill="#FFFFFF" opacity=".55"/>
+  <g>
+    <use href="#bear" transform="translate(320,842)" fill="#E8894E"/>
+    <use href="#bear" transform="translate(376,850) rotate(8)" fill="#D4808A"/>
+    <use href="#bear" transform="translate(434,842) rotate(-7)" fill="#C9A96E"/>
+    <use href="#bear" transform="translate(492,851) rotate(6)" fill="#E8A46A"/>
+  </g>
+  <rect x="316" y="548" width="268" height="286" rx="18" fill="#FFFFFF" stroke="#EADFD2" stroke-width="2"/>
+  <text x="450" y="596" text-anchor="middle" font-size="27" letter-spacing="5" fill="#8A7F71">sōken</text>
+  <line x1="400" y1="614" x2="500" y2="614" stroke="#EADFD2" stroke-width="2"/>
+  <text x="450" y="644" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="4" fill="#C77A3F">ADVANCED CAROTENOID</text>
+  <text x="450" y="696" text-anchor="middle" font-size="42" fill="#1C1916">Eye Gummies</text>
+  <text x="450" y="740" text-anchor="middle" font-size="17" font-style="italic" fill="#6E6965">See Brilliance. Live Clarity.</text>
+  <rect x="342" y="770" width="104" height="28" rx="14" fill="#FAF3EA"/>
+  <text x="394" y="788" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#8A6B45">60 GUMMIES</text>
+  <rect x="454" y="770" width="104" height="28" rx="14" fill="#FAF3EA"/>
+  <text x="506" y="788" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#8A6B45">VEGETARIAN</text>
+</svg>

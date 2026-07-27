@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="80%">
+      <stop offset="0%" stop-color="#FEFBFD"/><stop offset="100%" stop-color="#EBDBEA"/>
+    </radialGradient>
+    <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".65"/><stop offset=".25" stop-color="#FFFFFF"/>
+      <stop offset=".65" stop-color="#F6EFE7"/><stop offset="1" stop-color="#E7DCCE"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BB8AB3"/><stop offset="1" stop-color="#96648E"/>
+    </linearGradient>
+    <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CFA3C8"/><stop offset="1" stop-color="#A9749F"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="30"/></filter>
+    <path id="spark" d="M0 -13 L3.2 -3.2 L13 0 L3.2 3.2 L0 13 L-3.2 3.2 L-13 0 L-3.2 -3.2 Z"/>
+    <style>
+      .rise{animation:rise 4s linear infinite}
+      .rise2{animation:rise 5s linear infinite 1.4s}
+      .rise3{animation:rise 4.6s linear infinite 2.6s}
+      @keyframes rise{0%{transform:translateY(30px);opacity:0}25%{opacity:.85}85%{opacity:.5}100%{transform:translateY(-190px);opacity:0}}
+      .tw{animation:tw 3.2s ease-in-out infinite}
+      .tw2{animation:tw 4.1s ease-in-out infinite 1.2s}
+      @keyframes tw{0%,100%{opacity:.2}50%{opacity:.95}}
+    </style>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="460" cy="520" r="350" fill="#A9749F" opacity=".2" filter="url(#glow)"/>
+  <use href="#spark" transform="translate(170,290)" fill="#A9749F" class="tw"/>
+  <use href="#spark" transform="translate(756,300) scale(.7)" fill="#C9A96E" class="tw2"/>
+  <use href="#spark" transform="translate(700,186) scale(.55)" fill="#BB8AB3" class="tw"/>
+  <use href="#spark" transform="translate(196,660) scale(.6)" fill="#C4849A" class="tw2"/>
+  <ellipse cx="460" cy="946" rx="270" ry="32" fill="#1C1916" opacity=".14" filter="url(#soft)"/>
+  <rect x="234" y="350" width="196" height="86" rx="24" fill="url(#cap)"/>
+  <rect x="252" y="368" width="160" height="8" rx="4" fill="#FFFFFF" opacity=".4"/>
+  <rect x="224" y="420" width="216" height="500" rx="42" fill="url(#tube)" stroke="#DCD1C2" stroke-width="2.5"/>
+  <rect x="244" y="466" width="20" height="410" rx="10" fill="#FFFFFF" opacity=".55"/>
+  <rect x="244" y="540" width="176" height="330" rx="16" fill="#FFFFFF" stroke="#EADFD2" stroke-width="2"/>
+  <text x="332" y="586" text-anchor="middle" font-size="23" letter-spacing="4" fill="#8A7F71">sōken</text>
+  <line x1="292" y1="602" x2="372" y2="602" stroke="#EADFD2" stroke-width="2"/>
+  <text x="332" y="628" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" letter-spacing="2.5" fill="#8A5A82">HAIR · SKIN · NAILS</text>
+  <text x="332" y="676" text-anchor="middle" font-size="32" fill="#1C1916">Biotin +</text>
+  <text x="332" y="712" text-anchor="middle" font-size="24" fill="#4A4542">Antioxidant</text>
+  <text x="332" y="742" text-anchor="middle" font-size="24" fill="#4A4542">Lipids</text>
+  <rect x="270" y="766" width="124" height="27" rx="13.5" fill="#F4EBF3"/>
+  <text x="332" y="784" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" letter-spacing="1" fill="#7C4E74">MIXED BERRY</text>
+  <rect x="270" y="801" width="124" height="27" rx="13.5" fill="#F4EBF3"/>
+  <text x="332" y="819" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#7C4E74">SUGAR-FREE</text>
+  <path d="M492 520 L712 520 L688 916 L516 916 Z" fill="#FFFFFF" opacity=".45" stroke="#D8CCBE" stroke-width="2.5"/>
+  <path d="M506 584 L698 584 L680 902 L524 902 Z" fill="url(#liq)" opacity=".9"/>
+  <ellipse cx="602" cy="584" rx="96" ry="14" fill="#FFFFFF" opacity=".5"/>
+  <ellipse cx="602" cy="700" rx="42" ry="13" fill="#FFFFFF" opacity=".85"/>
+  <ellipse cx="602" cy="694" rx="42" ry="13" fill="#F3EAF2"/>
+  <g fill="#FFFFFF">
+    <circle cx="548" cy="840" r="7" class="rise"/>
+    <circle cx="590" cy="860" r="5" class="rise2"/>
+    <circle cx="636" cy="846" r="8" class="rise3"/>
+    <circle cx="662" cy="812" r="4.5" class="rise"/>
+    <circle cx="566" cy="790" r="4" class="rise3"/>
+    <circle cx="614" cy="806" r="6" class="rise2"/>
+  </g>
+  <use href="#spark" transform="translate(560,470) scale(.5)" fill="#FFFFFF" class="tw"/>
+  <use href="#spark" transform="translate(660,440) scale(.65)" fill="#CFA3C8" class="tw2"/>
+  <text x="450" y="1006" text-anchor="middle" font-size="21" font-style="italic" fill="#6E6965">Nourish. Protect. Glow from within.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="80%">
+      <stop offset="0%" stop-color="#FCFDFB"/><stop offset="100%" stop-color="#DEE9DC"/>
+    </radialGradient>
+    <linearGradient id="jar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".6"/><stop offset=".2" stop-color="#FFFFFF"/>
+      <stop offset=".6" stop-color="#F7F0E8"/><stop offset="1" stop-color="#E9DFD2"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FB08F"/><stop offset="1" stop-color="#658A65"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="30"/></filter>
+    <g id="bear">
+      <circle cx="10" cy="7" r="7"/><circle cx="34" cy="7" r="7"/><circle cx="22" cy="15" r="14"/>
+      <rect x="5" y="23" width="34" height="30" rx="13"/><circle cx="3" cy="32" r="6"/><circle cx="41" cy="32" r="6"/>
+      <circle cx="13" cy="53" r="6"/><circle cx="31" cy="53" r="6"/>
+    </g>
+    <path id="spark" d="M0 -13 L3.2 -3.2 L13 0 L3.2 3.2 L0 13 L-3.2 3.2 L-13 0 L-3.2 -3.2 Z"/>
+    <path id="leaf" d="M0 0 C22 -6 34 -24 34 -46 C12 -44 -2 -28 0 0 Z"/>
+    <style>
+      .fl{animation:fl 5.5s ease-in-out infinite}
+      .fl2{animation:fl 7s ease-in-out infinite reverse}
+      @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+      .tw{animation:tw 3.2s ease-in-out infinite}
+      .tw2{animation:tw 4.1s ease-in-out infinite 1.2s}
+      @keyframes tw{0%,100%{opacity:.2}50%{opacity:.95}}
+    </style>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="450" cy="500" r="340" fill="#7A9E7A" opacity=".22" filter="url(#glow)"/>
+  <use href="#spark" transform="translate(190,300)" fill="#7A9E7A" class="tw"/>
+  <use href="#spark" transform="translate(716,372) scale(.7)" fill="#C9A96E" class="tw2"/>
+  <use href="#spark" transform="translate(650,214) scale(.55)" fill="#7A9E7A" class="tw"/>
+  <g class="fl"><use href="#leaf" transform="translate(170,560) rotate(-24) scale(1.4)" fill="#7A9E7A" opacity=".85"/></g>
+  <g class="fl2"><use href="#leaf" transform="translate(724,470) rotate(38) scale(1.1)" fill="#98B598" opacity=".8"/></g>
+  <g class="fl2"><use href="#bear" transform="translate(680,600) rotate(12) scale(1.25)" fill="#7A9E7A"/></g>
+  <g class="fl"><use href="#bear" transform="translate(180,800) rotate(-10)" fill="#A9C29B"/></g>
+  <ellipse cx="450" cy="938" rx="245" ry="32" fill="#1C1916" opacity=".14" filter="url(#soft)"/>
+  <rect x="318" y="352" width="264" height="112" rx="30" fill="url(#cap)"/>
+  <rect x="342" y="374" width="216" height="9" rx="4.5" fill="#FFFFFF" opacity=".4"/>
+  <rect x="280" y="440" width="340" height="472" rx="70" fill="url(#jar)" stroke="#DCD1C2" stroke-width="2.5"/>
+  <rect x="306" y="492" width="24" height="372" rx="12" fill="#FFFFFF" opacity=".55"/>
+  <g>
+    <use href="#bear" transform="translate(320,842)" fill="#7A9E7A"/>
+    <use href="#bear" transform="translate(376,850) rotate(8)" fill="#A9C29B"/>
+    <use href="#bear" transform="translate(434,842) rotate(-7)" fill="#C9A96E"/>
+    <use href="#bear" transform="translate(492,851) rotate(6)" fill="#8FB08F"/>
+  </g>
+  <rect x="316" y="548" width="268" height="286" rx="18" fill="#FFFFFF" stroke="#EADFD2" stroke-width="2"/>
+  <text x="450" y="596" text-anchor="middle" font-size="27" letter-spacing="5" fill="#8A7F71">sōken</text>
+  <line x1="400" y1="614" x2="500" y2="614" stroke="#EADFD2" stroke-width="2"/>
+  <text x="450" y="644" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="4" fill="#5D815D">RESPIRATORY CARE</text>
+  <text x="450" y="690" text-anchor="middle" font-size="34" fill="#1C1916">Lung Health</text>
+  <text x="450" y="726" text-anchor="middle" font-size="34" fill="#1C1916">Gummies</text>
+  <text x="450" y="762" text-anchor="middle" font-size="16" font-style="italic" fill="#6E6965">Breathe Better. Live Better.</text>
+  <rect x="342" y="782" width="104" height="28" rx="14" fill="#EFF5EC"/>
+  <text x="394" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#4F724F">60 GUMMIES</text>
+  <rect x="454" y="782" width="104" height="28" rx="14" fill="#EFF5EC"/>
+  <text x="506" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#4F724F">BOTANICAL</text>
+</svg>
