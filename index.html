@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 <body data-page="home">
 
@@ -102,7 +102,10 @@
   </div>
 </section>
 
-<!-- ===== AT A GLANCE (counts + product quick nav) ===== -->
+<!-- ===== STICKY ZONE: quick nav stays pinned until the collection ends ===== -->
+<div class="gl-zone">
+
+<!-- ===== AT A GLANCE (product quick nav) ===== -->
 <section class="glance">
   <div class="ct">
     <div class="gl-prods rv">
@@ -115,6 +118,7 @@
       <a href="#p-biotin-antiox"><span class="ic"><img src="assets/img/icons/biotin.svg" alt="" width="26" height="26"></span><span class="tx">Biotin</span></a>
       <a href="#p-gut-health"><span class="ic"><img src="assets/img/icons/gut.svg" alt="" width="26" height="26"></span><span class="tx">Gut Health</span></a>
     </div>
+    <div class="gl-cap" id="gl-cap" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -191,6 +195,8 @@
     <div class="bl-list" id="best-list"></div>
   </div>
 </section>
+
+</div><!-- /gl-zone -->
 
 <!-- ===== PHILOSOPHY ===== -->
 <section class="values">
@@ -351,6 +357,6 @@
   <div class="ftr-word" aria-hidden="true">SOKEN</div>
 </footer>
 
-<script src="assets/js/store.js?v=2"></script>
+<script src="assets/js/store.js?v=11"></script>
 </body>
 </html>

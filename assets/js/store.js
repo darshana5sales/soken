@@ -245,7 +245,8 @@ function showcaseHTML(p) {
     <div class="bl-tx">
       <h3><a href="product.html?id=${p.id}">${p.name}</a></h3>
       <div class="bl-tag">${p.tagline}</div>
-      <p>${p.desc}</p>
+      <h4 class="bl-bh">Key Benefits</h4>
+      <ul class="bl-ben">${p.keyBenefits.map(b => `<li><i>✦</i>${b}</li>`).join('')}</ul>
       <div class="bl-price">${fmt(p.price)}<s>${fmt(p.mrp)}</s><span class="off">${off}% off</span></div>
       <div class="bl-btns">
         <a class="btn btn-ink" href="product.html?id=${p.id}">View More <span class="ar">→</span></a>
@@ -547,6 +548,46 @@ function placeOrder(ev) {
   syncCartUI();
 }
 
+/* ===== STICKY QUICK-NAV BAR (compacts when pinned + highlights current product) ===== */
+function initGlanceBar() {
+  const bar = document.querySelector('.glance');
+  if (!bar) return;
+  const links = [...document.querySelectorAll('.gl-prods a')];
+  const hdrH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hdr-h')) || 74;
+
+  const cap = document.getElementById('gl-cap');
+  const setCap = txt => {
+    if (!cap) return;
+    cap.textContent = txt || '';
+    cap.classList.toggle('on', !!txt);
+  };
+  // tapping an icon names it (mobile has no hover)
+  links.forEach(a => {
+    const label = a.querySelector('.tx') ? a.querySelector('.tx').textContent : '';
+    a.addEventListener('touchstart', () => setCap(label), { passive: true });
+    a.addEventListener('mouseenter', () => setCap(label));
+  });
+
+  const update = () => {
+    bar.classList.toggle('stuck', bar.getBoundingClientRect().top <= hdrH + 1);
+    const items = document.querySelectorAll('.bl-item');
+    if (!items.length) return;
+    const line = hdrH + bar.offsetHeight + 40;
+    let current = '';
+    items.forEach(it => { if (it.getBoundingClientRect().top <= line) current = it.id; });
+    let activeLabel = '';
+    links.forEach(a => {
+      const on = a.getAttribute('href') === '#' + current;
+      if (on) activeLabel = a.querySelector('.tx') ? a.querySelector('.tx').textContent : '';
+      a.classList.toggle('on', on);
+    });
+    setCap(activeLabel);
+  };
+  update();
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+}
+
 /* ===== HERO PRODUCT SLIDER ===== */
 const HERO_SLIDES = [
   { id: 'eye-gummies', name: 'Eye Gummies', meta: 'Bestseller · ₹599' },
@@ -630,6 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (page === 'home') {
     const bl = document.getElementById('best-list');
     if (bl) { bl.innerHTML = PRODUCTS.map(p => showcaseHTML(p)).join(''); observeReveals(bl); }
+    initGlanceBar();
     tstGo(0);
     heroGo(0);
   }

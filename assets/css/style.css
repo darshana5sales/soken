@@ -18,8 +18,9 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;overflow-x:clip}
+body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.6;
+  overflow-x:hidden;overflow-x:clip}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer}
@@ -199,9 +200,13 @@ button{font-family:inherit;cursor:pointer}
 }
 
 
-/* ===== AT A GLANCE (counts + product quick nav) ===== */
-.glance{background:var(--white);border-bottom:1px solid var(--line);padding:72px 0}
-.gl-stats{display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,72px);flex-wrap:wrap;margin-bottom:52px}
+/* ===== AT A GLANCE (product quick nav) — sticky under the header ===== */
+.glance{position:sticky;top:var(--hdr-h);z-index:90;
+  background:var(--white);border-bottom:1px solid var(--line);padding:34px 0;
+  transition:padding .4s var(--ease),background .4s var(--ease),box-shadow .4s var(--ease)}
+.glance.stuck{padding:12px 0;background:rgba(255,255,255,.9);backdrop-filter:blur(18px);
+  box-shadow:0 10px 30px rgba(28,25,22,.07)}
+.gl-stats{display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,72px);flex-wrap:wrap}
 .gl-s{text-align:center}
 .gl-s .n{font-family:var(--fd);font-size:clamp(46px,4.8vw,68px);font-weight:300;line-height:1;color:var(--ink)}
 .gl-s .l{margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-light)}
@@ -213,15 +218,31 @@ button{font-family:inherit;cursor:pointer}
   text-align:center;line-height:1.4;transition:all .35s var(--ease)}
 .gl-prods .ic{width:58px;height:58px;border-radius:50%;background:var(--white);border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;transition:all .35s var(--ease)}
-.gl-prods img{width:26px;height:26px}
+.gl-prods img{width:26px;height:26px;transition:width .35s var(--ease),height .35s var(--ease)}
 .gl-prods a:hover{transform:translateY(-5px);border-color:var(--mauve);color:var(--ink);
   box-shadow:0 18px 40px rgba(28,25,22,.1)}
 .gl-prods a:hover .ic{background:rgba(232,164,160,.22);border-color:var(--mauve)}
-@media(max-width:1100px){.gl-prods{grid-template-columns:repeat(4,1fr)}}
+.gl-cap{display:none}
+/* current product while scrolling the collection */
+.gl-prods a.on{border-color:var(--mauve);color:var(--ink);background:var(--white)}
+.gl-prods a.on .ic{background:rgba(232,164,160,.22);border-color:var(--mauve)}
+/* compact row once the bar is pinned */
+.glance.stuck .gl-prods{gap:9px}
+.glance.stuck .gl-prods a{flex-direction:row;justify-content:center;gap:11px;padding:10px 12px;
+  border-radius:var(--rp);font-size:10px;color:var(--ink)}
+.glance.stuck .gl-prods .ic{width:40px;height:40px;flex-shrink:0}
+.glance.stuck .gl-prods img{width:24px;height:24px}
+.glance.stuck .gl-prods a:hover{transform:none;box-shadow:none}
+@media(max-width:1100px){
+  .gl-prods{grid-template-columns:repeat(4,1fr)}
+  .glance.stuck .gl-prods a .tx{display:none}
+  .glance.stuck .gl-prods{grid-template-columns:repeat(8,1fr)}
+}
 @media(max-width:560px){
   .gl-prods{grid-template-columns:repeat(2,1fr)}
   .gl-div{display:none}
   .gl-stats{gap:28px}
+  .glance{position:static}
 }
 
 /* ===== COUNTS BAND ===== */
@@ -299,7 +320,8 @@ button{font-family:inherit;cursor:pointer}
 
 /* ===== BESTSELLER SHOWCASE (alternating rows) ===== */
 .bl-list{display:flex;flex-direction:column;gap:72px}
-.bl-item{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center}
+.bl-item{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center;
+  scroll-margin-top:calc(var(--hdr-h) + 110px)}
 .bl-item:nth-child(even) .bl-img{order:2}
 .bl-img{position:relative;display:block;border-radius:var(--rc);overflow:hidden;aspect-ratio:4/3;
   box-shadow:0 26px 70px rgba(28,25,22,.12)}
@@ -312,6 +334,11 @@ button{font-family:inherit;cursor:pointer}
 .bl-tx h3 a:hover{color:var(--mauve)}
 .bl-tag{font-family:var(--fd);font-style:italic;font-size:19px;color:var(--mauve);margin-top:7px}
 .bl-tx p{margin-top:16px;font-size:14px;font-weight:300;color:var(--ink-mid);line-height:1.85;max-width:500px}
+.bl-bh{margin-top:22px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-light)}
+.bl-ben{list-style:none;margin-top:14px;display:grid;gap:10px;max-width:520px}
+.bl-ben li{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;font-weight:300;
+  color:var(--ink-mid);line-height:1.6}
+.bl-ben li i{font-style:normal;color:var(--honey);font-size:11px;margin-top:4px;flex-shrink:0}
 .bl-price{margin-top:18px;font-size:17px;font-weight:700}
 .bl-price s{color:var(--ink-light);font-weight:400;margin-left:9px;font-size:13.5px}
 .bl-price .off{margin-left:10px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
@@ -784,3 +811,135 @@ a.rng-i:hover .rng-ic{background:rgba(232,164,160,.2);border-color:var(--blush)}
 .done p{margin-top:14px;font-size:14.5px;color:var(--ink-light);max-width:420px;margin-inline:auto;line-height:1.8}
 .done .oid{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
 .done .btn{margin-top:34px}
+
+
+/* =========================================================
+   MOBILE REFINEMENTS
+   ========================================================= */
+
+/* --- tablets and below --- */
+/* sticky quick-nav on phones/tablets: all 8 as icons only, one tight row */
+@media(max-width:900px){
+  .glance{position:sticky;top:var(--hdr-h);z-index:90;padding:9px 0;
+    border-bottom:1px solid var(--line)}
+  .glance.stuck{padding:7px 0;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);
+    box-shadow:0 6px 20px rgba(28,25,22,.08)}
+  .gl-prods,.glance.stuck .gl-prods{display:flex!important;grid-template-columns:none!important;
+    justify-content:space-between;align-items:center;gap:4px;padding:0;overflow:hidden;max-width:100%}
+  .gl-prods a,.glance.stuck .gl-prods a{flex:0 1 auto;min-width:0;flex-direction:row;gap:0;padding:0;
+    border:none;background:none;box-shadow:none;border-radius:50%;transform:none}
+  .gl-prods a .tx,.glance.stuck .gl-prods a .tx{display:none!important}
+  /* icons scale with the viewport so all eight always fit, 320px phones included */
+  .gl-prods .ic,.glance.stuck .gl-prods .ic{width:clamp(28px,9.2vw,40px);height:clamp(28px,9.2vw,40px);
+    background:var(--white);border:1px solid var(--line)}
+  .gl-prods img,.glance.stuck .gl-prods img{width:clamp(15px,4.8vw,21px);height:clamp(15px,4.8vw,21px)}
+  .gl-prods a.on .ic{background:rgba(232,164,160,.28);border-color:var(--mauve)}
+  .gl-prods a:hover .ic{background:rgba(232,164,160,.28);border-color:var(--mauve)}
+  /* one shared caption under the row — no per-icon tooltip, so nothing can overflow */
+  .gl-cap{display:block;margin-top:7px;text-align:center;min-height:12px;
+    font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mauve);opacity:0;transition:opacity .3s var(--ease)}
+  .gl-cap.on{opacity:1}
+}
+
+@media(max-width:768px){
+  /* vertical rhythm: desktop padding is far too tall on a phone */
+  .sec{padding:64px 0}
+  .tsl,.news,.values,.ritual{padding:64px 0}
+  .counts{padding:44px 0}
+  .ctab{padding-bottom:64px}
+  .cats{padding:64px 0 0}
+  .shop-pad{padding-bottom:64px}
+  .sec-hd{margin-bottom:34px;flex-direction:column;align-items:flex-start;gap:18px}
+  .sec-hd.center{align-items:center}
+
+  /* marquee: giant type overflowed the band */
+  .mq{padding:38px 0}
+  .mq-t{font-size:clamp(30px,7.5vw,44px);padding:0 16px}
+
+  /* counts */
+  .gl-stats{gap:20px}
+  .gl-s .n{font-size:40px}
+  .gl-s .l{margin-top:8px;font-size:9px;letter-spacing:.14em}
+
+  /* trust strip */
+  .trust-in{padding:20px 0;gap:8px 18px}
+  .trust-i{font-size:9.5px;letter-spacing:.12em}
+
+  /* product rows: full-width buttons instead of a cramped pair */
+  .bl-list{gap:44px}
+  .bl-img{aspect-ratio:4/3.2}
+  .bl-tx h3{font-size:28px}
+  .bl-tag{font-size:16px}
+  .bl-bh{margin-top:18px}
+  .bl-ben{gap:8px;max-width:none}
+  .bl-ben li{font-size:13px}
+  .bl-btns{gap:10px}
+  .bl-btns .btn{width:100%}
+
+  /* why-soken badge sat over the image edge */
+  .rit-grid{gap:44px}
+  .rit-badge{position:static;max-width:none;margin-top:16px;padding:20px 22px}
+  .rit-media .big{aspect-ratio:4/3.4}
+
+  /* hero — size the circle to the space that's actually left below the arrows */
+  .hero-r{height:auto;min-height:0;padding:26px 0 82px}
+  .hs-round{width:min(68vw,290px)}
+  .hs-ring{width:min(76vw,324px)}
+  .hero-sub{font-size:14.5px}
+  .hero-btns .btn{width:100%}
+
+  /* interior page banners */
+  .phd{padding:calc(var(--hdr-h) + 54px) 0 46px}
+  .phd p{font-size:14px}
+  .phd .btn-row .btn{width:100%}
+
+  /* dark CTA / philosophy bands */
+  .ctab-card{padding:48px 24px}
+  .ctab-card .btn-row .btn,.values .btn-row .btn{width:100%}
+  .statrow{gap:30px;margin-top:36px}
+  .statx .n{font-size:32px}
+
+  /* footer */
+  .ftr{padding:56px 0 0}
+  .ftr-grid{gap:34px;padding-bottom:44px}
+  .ftr-word{font-size:clamp(64px,20vw,110px);margin-top:32px}
+  .ftr-bot{flex-direction:column;align-items:flex-start;gap:12px}
+  /* two link columns side by side instead of one long list */
+  .ftr-grid{grid-template-columns:1fr 1fr!important;gap:30px 22px}
+  .ftr-brand{grid-column:1/-1}
+  .ftr h5{margin-bottom:14px}
+  .ftr-col a{padding:5px 0;font-size:13px}
+
+  /* product detail */
+  .pdp{padding:44px 0 64px}
+  .pdp-buy{gap:10px}
+  .pdp-buy .btn{min-width:100%}
+  .pdp-desc{max-width:none}
+  .pdp-meta{gap:14px}
+
+  /* cart + checkout */
+  .cartpg,.chk{padding-bottom:64px}
+  .sum,.chk-sum{padding:26px 22px}
+
+  /* info pages */
+  .icard{padding:26px 22px}
+  .vm-card{padding:30px 24px}
+  .side-card{padding:32px 24px}
+  .split{gap:34px}
+}
+
+/* --- small phones --- */
+@media(max-width:480px){
+  .ct{padding:0 18px}
+  .hero-r{padding:20px 0 74px}
+  .hs-round{width:min(70vw,250px)}
+  .hs-ring{width:min(78vw,282px)}
+  .gl-prods,.glance.stuck .gl-prods{gap:3px}
+  .gl-stats{flex-direction:column;gap:22px}
+  .mq-t{font-size:clamp(26px,8vw,34px)}
+  .btn{padding:15px 26px;font-size:11.5px}
+  .tsl-arrows .tsl-ar{width:44px;height:44px}
+  .news-form{padding:6px}
+  .drawer{width:100vw}
+}
